@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'mobitel')">
+    Mobitel
+</button>
+
+  <button class="tablinks" onclick="openCity(event, 'Pdialogaris')">
+    Dialog
+</button>
+
+  <button class="tablinks" onclick="openCity(event, 'hutch')">
+    Hutch
+</button>
+
+<button class="tablinks" onclick="openCity(event, 'airtel')">
+    Airtel
+</button>
+</div>
+
+<!-- mobitel tab content -->
+<div id="mobitel" class="tabcontent">
+    <div class="form-block w-form">
+        <form id="loan-request" name="email-form" data-name="Email Form" method="get" class="form">
+            <label for="Account-Number" class="field-label">Mobitel Number</label>
+            <input type="text" class="text-field w-input" maxlength="256" name="Account-Number" data-name="Account Number" placeholder="E.g: 80696969" id="mobitelaccountNumber" required=""/>
+            <label for="reload-card" class="field-label">Mobitel Scratch Card Number</label>
+            <input type="text" class="text-field w-input" maxlength="256" name="reload-card" data-name="reload-card" id="mobitelreload-card" required=""/>
+            <input type="submit" value="Continue" data-wait="Please wait..." id="mobitelsubmitButton" class="submit-button w-button"/>
+        </form></div>
+</div>
+
+<script src="recharge.js"></script>
+
+
+<!--- switch between tabs --->
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
